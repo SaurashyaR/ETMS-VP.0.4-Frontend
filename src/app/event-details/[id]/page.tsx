@@ -1,4 +1,5 @@
 import EventArtitst from '@/components/features/shared/EventArtitst';
+import Image from 'next/image';
 import React from 'react'
 import { BiSolidMedal } from 'react-icons/bi';
 import { CiCalendar, CiLocationOn } from 'react-icons/ci';
@@ -91,7 +92,7 @@ function page() {
                     </div>
 
                 </div>
-        
+
                 {/* Top Blue Header Full Width */}
                 <div className="w-[full] h-[273px] bg-[#2B5793] text-white flex ">
                     <div className="w-full mx-auto flex  flex-col xl:flex justify-end items-end pr-6">
@@ -193,7 +194,7 @@ function page() {
 
                         <div>
                             <h1 className='text-[32px] font-[400]'>Event Artist</h1>
-                            <div className='mt-2'> 
+                            <div className='mt-2'>
 
                                 <EventArtitst
                                     id={1}
@@ -216,43 +217,99 @@ function page() {
                         <p className='text-[#4B91F1] text-[32px] font-[400]'>Our Proud Sponsors</p>
                     </div>
 
-                    <div>
+                    <div className='flex flex-col gap-[42px]'>
 
-                        <div className='flex justify-center items-center gap-[20px]'>
+                        <div className='flex flex-col justify-center items-center gap-[20px]'>
                             <BiSolidMedal size={32} height={32} />
                             <h1 className='text-[32px]'>Title Sponsor</h1>
+
+                            <div className="w-[246px] h-[239px] relative rounded-full overflow-hidden">
+                                <Image
+                                    src={'/1.png'}
+                                    alt={'/1.png'}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </div>
 
 
                         <div className='flex justify-around '>
 
-                            <div>
+                            <div className='flex flex-col gap-[50px]'>
 
                                 <div className='flex justify-center items-center gap-[20px]'>
                                     <BiSolidMedal size={25} height={24} />
                                     <h1 className='text-[24px]'>Gold Sponsor</h1>
                                 </div>
 
-                                <div>
+                                <div className='flex gap-[90px]'>
+                                    <div className="w-[145px] h-[141px] relative rounded-full overflow-hidden">
+                                        <Image
+                                            src={'/1.png'}
+                                            alt={'/1.png'}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="w-[145px] h-[141px] relative rounded-full overflow-hidden">
+                                        <Image
+                                            src={'/1.png'}
+                                            alt={'/1.png'}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
 
                                 </div>
                             </div>
 
-                            <div className='flex justify-center items-center gap-[20px]'>
-                                <BiSolidMedal size={25} height={24} />
-                                <h1 className='text-[24px]'>Silver Sponsor</h1>
+                            <div className='flex flex-col gap-[50px]'>
+
+                                <div className='flex justify-center items-center gap-[20px]'>
+                                    <BiSolidMedal size={25} height={24} />
+                                    <h1 className='text-[24px]'>Silver Sponsor</h1>
+                                </div>
+
+                                <div className='flex gap-[90px]'>
+                                    <div className="w-[145px] h-[141px] relative rounded-full overflow-hidden">
+                                        <Image
+                                            src={'/1.png'}
+                                            alt={'/1.png'}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="w-[145px] h-[141px] relative rounded-full overflow-hidden">
+                                        <Image
+                                            src={'/1.png'}
+                                            alt={'/1.png'}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+
+                                </div>
                             </div>
-
-
                         </div>
 
 
                         <div>
-                            <div className='flex justify-center items-center gap-[20px]'>
+                            <div className='flex flex-col justify-center items-center gap-[20px]'>
                                 <FaHandshake size={20} height={16} />
                                 <h1 className='text-[20px]'>Supporting Sponsor</h1>
-                            </div>
+                                <div>
 
+                                    <div className="w-[103px] h-[100px] relative rounded-full overflow-hidden">
+                                        <Image
+                                            src={'/1.png'}
+                                            alt={'/1.png'}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -30,10 +30,9 @@ function page() {
 
                 </div>
 
-                {/* Top Blue Header Full Width */}
                 <div className="w-[full] h-[273px] bg-[#2B5793] text-white flex ">
                     <div className="w-full mx-auto flex  flex-col xl:flex justify-end items-end pr-6">
-                        <div className=' xl:mr-[60%] xl:mt-19  '>
+                        <div className=' xl:mr-[55%]  '>
                             <h1 className=" text-[18px] lg:text-[24px]">AMRIT GURUNG</h1>
 
                         </div>
@@ -42,9 +41,7 @@ function page() {
                 </div>
 
                 <div className="relative max-w-[1200px] mx-6 flex gap-6 mt-[50px]">
-                    {/* LEFT COLUMN */}
                     <div className="w-[350px] flex flex-col gap-6">
-                        {/* Poster Card overlapping top */}
                         <div className="absolute -top-[240px] left-0 w-[357px] h-[385px]">
                             <div
                                 className="bg-white rounded-[10px] overflow-hidden shadow w-full h-full relative"
@@ -62,8 +59,13 @@ function page() {
 
                     <div className="flex-1 flex flex-col gap-6">
                         <div>
-                            <h1 className="text-[22px]">Event Details</h1>
+                            <h1 className="text-[22px]">Artist Details</h1>
                         </div>
+
+                        <button className='w-[206px] h-[39px] px-[10px] py-[11px] border-[#2460B9] rounded-[5px]
+                     bg-[#1EBBD7] text-white
+                     flex justify-center items-center
+                     cursor-pointer'>View Upcoming Events</button>
 
                     </div>
                 </div>
