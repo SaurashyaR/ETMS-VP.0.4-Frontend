@@ -1,3 +1,4 @@
+import EventArtitst from '@/components/features/shared/EventArtitst';
 import React from 'react'
 import { BiSolidMedal } from 'react-icons/bi';
 import { CiCalendar, CiLocationOn } from 'react-icons/ci';
@@ -90,7 +91,7 @@ function page() {
                     </div>
 
                 </div>
-
+        
                 {/* Top Blue Header Full Width */}
                 <div className="w-[full] h-[273px] bg-[#2B5793] text-white flex ">
                     <div className="w-full mx-auto flex  flex-col xl:flex justify-end items-end pr-6">
@@ -119,36 +120,48 @@ function page() {
                 </div>
 
                 {/* Content Wrapper */}
-                <div className="relative max-w-[1200px] mx-auto flex gap-6 mt-[50px]">
+                <div className="relative max-w-[1200px] mx-6 flex gap-6 mt-[50px]">
                     {/* LEFT COLUMN */}
                     <div className="w-[350px] flex flex-col gap-6">
                         {/* Poster Card overlapping top */}
-                        <div className="absolute -top-[240px] left-0 w-[350px]">
-                            <div className="bg-white rounded-[10px] overflow-hidden shadow">
-                                <img
-                                    src="/images/singer.jpg"
-                                    alt={event.name}
-                                    className="w-[357px] h-[385px] object-cover"
-                                />
-                                <div className="p-4">
+                        <div className="absolute -top-[240px] left-0 w-[357px] h-[385px]">
+                            <div
+                                className="bg-white rounded-[10px] overflow-hidden shadow w-full h-full relative"
+                                style={{
+                                    backgroundImage: `url('/1.png')`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                }}
+                            >
+                                <div className="flex flex-col justify-end h-full bg-black/40 p-4 text-white items-center">
                                     <h2 className="text-[24px]">{event.name}</h2>
                                     <p className="text-[14px]">{formatDate(event.eventDate)}</p>
-                                    <p className="text-[14px] text-blue-500">{event.location.address}</p>
+                                    <p className="text-[14px] text-blue-300">{event.location.address}</p>
                                 </div>
                             </div>
                         </div>
 
+
                         {/* Push content down so organizer card is below poster */}
-                        <div className="mt-[270px] bg-white p-4 rounded-[10px] shadow">
+                        <div className="mt-[170px] bg-white p-4 rounded-[10px] shadow">
                             <p className="text-[18px] font-semibold">{event.organizerName}</p>
                             <p className="text-[14px] text-gray-500">Organizer</p>
                         </div>
 
                         {/* Map */}
-                        <div className="bg-white rounded-[10px] overflow-hidden shadow">
+                        <div className="bg-white rounded-[10px] overflow-hidden">
+
+                            <div className='flex gap-[16px] flex-col pb-2'>
+                                <h1>Location of the Event</h1>
+
+                                <div className='flex gap-[16px] items-center'>
+                                    <CiLocationOn />
+                                    <h1>{event.location.address}</h1>
+                                </div>
+                            </div>
                             <iframe
                                 src={event.location.mapLink}
-                                className="w-full h-[200px]"
+                                className="w-[357px] h-[831px]"
                                 allowFullScreen
                                 loading="lazy"
                             ></iframe>
@@ -170,17 +183,31 @@ function page() {
 
                         {/* Terms */}
                         <div>
-                            <h2 className="text-[16px] font-[400]">Terms and Conditions accepted with the purchase of tickets for this event:</h2>
+                            <h2 className="text-[22px] font-[400]">Terms and Conditions accepted with the purchase of tickets for this event:</h2>
                             <ul className="list-disc pl-4 text-gray-700 mt-4">
                                 {event.terms.map((term, index) => (
                                     <li key={index}>{term}</li>
                                 ))}
                             </ul>
                         </div>
+
+                        <div>
+                            <h1 className='text-[32px] font-[400]'>Event Artist</h1>
+                            <div className='mt-2'> 
+
+                                <EventArtitst
+                                    id={1}
+                                    name="Ashim"
+                                    role="Singer"
+                                    image="/1.png"
+                                />
+                            </div>
+                        </div>
                     </div>
+
                 </div>
 
-                <div>
+                <div className='m-6'>
 
 
                     <div>
