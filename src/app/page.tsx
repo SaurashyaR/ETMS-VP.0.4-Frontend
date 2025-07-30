@@ -1,8 +1,13 @@
+import UpcomingEvents from '@/components/features/dashboard/UpcomingEvents'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <>
+      <div className="flex">
+        <UpcomingEvents />
+      </div>
+    </>
   )
 }
 
