@@ -153,9 +153,9 @@ function page() {
                         <div className="bg-white rounded-[10px] overflow-hidden">
 
                             <div className='flex gap-[16px] flex-col pb-2'>
-                                <h1>Location of the Event</h1>
+                                <h1 className="font-semibold">Location of the Event</h1>
 
-                                <div className='flex gap-[16px] items-center'>
+                                <div className='flex gap-[16px] items-center text-[#4B91F1]'>
                                     <CiLocationOn />
                                     <h1>{event.location.address}</h1>
                                 </div>
@@ -208,6 +208,9 @@ function page() {
 
                 </div>
 
+
+                {/* sponsor section div */}
+
                 <div className='m-6'>
 
 
@@ -223,7 +226,7 @@ function page() {
                             <BiSolidMedal size={32} height={32} />
                             <h1 className='text-[32px]'>Title Sponsor</h1>
 
-                            <div className="w-[246px] h-[239px] relative rounded-full overflow-hidden">
+                            <div className="w-[246px] h-[239px] relative rounded-full overflow-hidden text-[#0F2C59]">
                                 <Image
                                     src={'/1.png'}
                                     alt={'/1.png'}
@@ -239,7 +242,7 @@ function page() {
                             <div className='flex flex-col gap-[50px]'>
 
                                 <div className='flex justify-center items-center gap-[20px]'>
-                                    <BiSolidMedal size={25} height={24} />
+                                    <BiSolidMedal size={25} height={24} className='text-[#DAA520]' />
                                     <h1 className='text-[24px]'>Gold Sponsor</h1>
                                 </div>
 
@@ -267,7 +270,7 @@ function page() {
                             <div className='flex flex-col gap-[50px]'>
 
                                 <div className='flex justify-center items-center gap-[20px]'>
-                                    <BiSolidMedal size={25} height={24} />
+                                    <BiSolidMedal size={25} height={24} className=' text-[#6E7B8B]' />
                                     <h1 className='text-[24px]'>Silver Sponsor</h1>
                                 </div>
 
@@ -296,8 +299,12 @@ function page() {
 
                         <div>
                             <div className='flex flex-col justify-center items-center gap-[20px]'>
-                                <FaHandshake size={20} height={16} />
-                                <h1 className='text-[20px]'>Supporting Sponsor</h1>
+
+                                <div className='flex gap-[20px] items-center '>
+
+                                    <FaHandshake size={20} height={16} className='text-[#1CA2B3]' />
+                                    <h1 className='text-[20px]'>Supporting Sponsor</h1>
+                                </div>
                                 <div>
 
                                     <div className="w-[103px] h-[100px] relative rounded-full overflow-hidden">

@@ -2,6 +2,21 @@ import React from 'react'
 import { IoChevronBackOutline } from 'react-icons/io5'
 
 function page() {
+
+    const artistDetails = [
+        {
+            "id": 1,
+            "name": "The Rock Band",
+            "biography": "Award winning rock band from California",
+            "photoUrl": "https://example.com/artists/rock-band.jpg",
+            "createdAt": "2023-01-05T00:00:00.000Z",
+            "updatedAt": "2023-01-05T00:00:00.000Z",
+            "createdBy": 2,
+            "updatedBy": 2,
+            "isActive": true
+        },
+    ]
+
     return (
         <React.Fragment>
 
@@ -33,7 +48,7 @@ function page() {
                 <div className="w-[full] h-[273px] bg-[#2B5793] text-white flex ">
                     <div className="w-full mx-auto flex  flex-col xl:flex justify-end items-end pr-6">
                         <div className=' xl:mr-[55%]  '>
-                            <h1 className=" text-[18px] lg:text-[24px]">AMRIT GURUNG</h1>
+                            <h1 className=" text-[18px] lg:text-[24px]">{artistDetails[0].name }</h1>
 
                         </div>
 
@@ -59,10 +74,10 @@ function page() {
 
                     <div className="flex-1 flex flex-col gap-6">
                         <div>
-                            <h1 className="text-[22px]">Artist Details</h1>
+                            <h1 className="text-[16px]">{artistDetails[0].biography}</h1>
                         </div>
 
-                        <button className='w-[206px] h-[39px] px-[10px] py-[11px] border-[#2460B9] rounded-[5px]
+                        <button className='w-[206px] h-[39px] px-[10px] py-[11px] border-[#2460B9] rounded-[10px]
                      bg-[#1EBBD7] text-white
                      flex justify-center items-center
                      cursor-pointer'>View Upcoming Events</button>
