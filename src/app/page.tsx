@@ -1,3 +1,4 @@
+import RecentBookings from '@/components/features/dashboard/RecentBookings'
 import UpcomingEvents from '@/components/features/dashboard/UpcomingEvents'
 import React from 'react'
 
@@ -6,6 +7,7 @@ const page = () => {
     <>
       <div className="flex">
         <UpcomingEvents />
+      <RecentBookings />
       </div>
     </>
   )
