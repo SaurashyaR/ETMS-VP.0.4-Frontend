@@ -22,18 +22,22 @@ export default function EditArtistField({
     defaultImageUrl
 }: EditArtistFieldProps) {
     return (
+        <div className="col-span-2 p-4 flex flex-col gap-4">
+            {/* Top row with remove button */}
+            <div className="flex justify-end">
+                {onRemove && (
+                    <button
+                        type="button"
+                        onClick={onRemove}
+                        className="text-red-500 font-bold text-lg hover:text-red-700"
+                    >
+                        ✕
+                    </button>
+                )}
+            </div>
 
-        <>
-            {/* Remove Button */}
-            {/* {onRemove && (
-                <button
-                    type="button"
-                    onClick={onRemove}
-                    className="absolute top-2 right-2 text-red-500 font-bold"
-                >
-                    ✕
-                </button>
-            )} */}
+            {/* Artist Inputs */}
+            <div className="grid grid-cols-2 gap-16">
 
             <Input
                 type="string"
@@ -52,25 +56,23 @@ export default function EditArtistField({
                 register={register}
                 error={errors?.role?.message}
             />
-
-            <div className="col-span-2 space-y-6">
-                <Input
-                    required={true}
-                    label="Artist Biography"
-                    name={`${prefix}.biography`}
-                    register={register}
-                    multiline={true}
-                    error={errors?.biography?.message}
-                />
-
-                <ImageUploaderController
-                    control={control}
-                    name={`${prefix}.artistPhoto`}
-                    multiple={false}
-                    defaultValue={defaultImageUrl}
-                />
             </div>
 
-        </>
+            <Input
+                required={true}
+                label="Artist Biography"
+                name={`${prefix}.biography`}
+                register={register}
+                multiline={true}
+                error={errors?.biography?.message}
+            />
+
+            <ImageUploaderController
+                control={control}
+                name={`${prefix}.artistPhoto`}
+                multiple={false}
+                defaultValue={defaultImageUrl}
+            />
+        </div>
     );
 }

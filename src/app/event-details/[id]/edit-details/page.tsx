@@ -169,7 +169,7 @@ function Page() {
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                     className=' shadow-lg border border-none rounded-[10px] p-9 space-y-4 mx-6 bg-white
-                    grid grid-cols-2 gap-6
+                    grid grid-cols-2 gap-16
                     '
                 >
                     <h1 className='text-[#4B91F1] font-[400] text-[20px] col-span-2 border-b-2 border-[#0000004D] pb-6'>Event Details</h1>
@@ -264,7 +264,7 @@ function Page() {
                             <h1 className='text-[#4B91F1] text-[20px]'>Event Artist Details</h1>
 
                             <button
-                                className="px-4 py-2 text-[#4B91F1] border rounded-[10px] border-[#4B91F1]"
+                                className="p-[10px] cursor-pointer flex justify-center items-center w-[71px] h-[42px] text-[#4B91F1] border rounded-[10px] border-[#4B91F1]"
                                 type="button"
                                 onClick={() =>
                                     append({
