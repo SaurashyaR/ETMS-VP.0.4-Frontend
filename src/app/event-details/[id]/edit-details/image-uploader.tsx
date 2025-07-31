@@ -20,7 +20,44 @@ const ImageUploaderField: React.FC<Props> = ({ field, fieldState, multiple }) =>
     const { onChange, value } = field;
     const { error } = fieldState;
 
-    const [files, setFiles] = useState<PreviewFile[]>(value || []);
+    // Initialize files state with support for existing URLs or File objects
+    const [files, setFiles] = useState<PreviewFile[]>(() => {
+        if (!value) return [];
+        if (typeof value === 'string') {
+            // If single string URL, convert to preview object
+            return [{ preview: value } as PreviewFile];
+        }
+        if (Array.isArray(value)) {
+            return value.map((file: any) =>
+                file.preview
+                    ? file
+                    : Object.assign(file, {
+                        preview: URL.createObjectURL(file),
+                    })
+            );
+        }
+        return [];
+    });
+
+    // Sync files state when value prop changes
+    useEffect(() => {
+        if (!value) {
+            setFiles([]);
+        } else if (typeof value === 'string') {
+            setFiles([{ preview: value } as PreviewFile]);
+        } else if (Array.isArray(value)) {
+            setFiles(
+                value.map((file: any) =>
+                    file.preview
+                        ? file
+                        : Object.assign(file, {
+                            preview: URL.createObjectURL(file),
+                        })
+                )
+            );
+        }
+    }, [value]);
+
     const [dropError, setDropError] = useState<string | null>(null);
 
     const onDrop = useCallback(
@@ -57,11 +94,7 @@ const ImageUploaderField: React.FC<Props> = ({ field, fieldState, multiple }) =>
         onChange(updatedFiles);
     };
 
-    const {
-        getRootProps,
-        getInputProps,
-        isDragActive,
-    } = useDropzone({
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
         multiple,
         accept: { 'image/*': [] },
@@ -70,9 +103,14 @@ const ImageUploaderField: React.FC<Props> = ({ field, fieldState, multiple }) =>
 
     useEffect(() => {
         return () => {
-            files.forEach(file => URL.revokeObjectURL(file.preview));
+            files.forEach(file => {
+                // Only revoke object URLs created in this component (ignore existing URLs)
+                if (file.preview && !(typeof value === 'string' && file.preview === value)) {
+                    URL.revokeObjectURL(file.preview);
+                }
+            });
         };
-    }, [files]);
+    }, [files, value]);
 
     return (
         <div>
@@ -84,7 +122,6 @@ const ImageUploaderField: React.FC<Props> = ({ field, fieldState, multiple }) =>
                 <input {...getInputProps()} />
 
                 <div className='space-y-2'>
-
                     <p className="text-black">
                         Drag and Drop files to upload
                     </p>
@@ -93,7 +130,6 @@ const ImageUploaderField: React.FC<Props> = ({ field, fieldState, multiple }) =>
                         Select files
                     </button>
                 </div>
-                    
             </div>
 
             {dropError && <p className="text-red-500 text-sm mt-2">{dropError}</p>}

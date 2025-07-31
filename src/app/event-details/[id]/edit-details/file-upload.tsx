@@ -6,14 +6,16 @@ interface Props {
     control: Control<any>;
     name: string;
     multiple?: boolean;
+    defaultValue?: any;
 }
 
-const ImageUploaderController: React.FC<Props> = ({ control, name, multiple = true }) => {
+const ImageUploaderController: React.FC<Props> = ({ control, name, multiple = true, defaultValue: defaultValue }) => {
     return (
         <Controller
             name={name}
             control={control}
-            defaultValue={[]}
+            
+            defaultValue={defaultValue} 
             rules={{ required: 'At least one image is required.' }}
             render={({ field, fieldState }) => (
                 <ImageUploaderField

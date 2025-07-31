@@ -1,9 +1,10 @@
 "use client"
 
 import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useFieldArray, useForm } from 'react-hook-form'
 import Input from './input'
 import ImageUploaderController from './file-upload'
+import EditArtistField from './editArtistField'
 
 function Page() {
     const eventDetails = [{
@@ -56,9 +57,33 @@ function Page() {
             "lastName": "Smith"
         },
         "isActive": true,
-
+        "artists": [
+            {
+                "id": 1,
+                "name": "The Rock Band",
+                "biography": "Award winning rock band from California",
+                "photoUrl": "https://example.com/artists/rock-band.jpg",
+                "createdAt": "2023-01-05T00:00:00.000Z",
+                "updatedAt": "2023-01-05T00:00:00.000Z",
+                "createdBy": 2,
+                "updatedBy": 2,
+                "isActive": true
+            },
+            {
+                "id": 2,
+                "name": "The Elements Band",
+                "biography": "Award winning rock band from California",
+                "photoUrl": "https://example.com/artists/rock-band.jpg",
+                "createdAt": "2023-01-05T00:00:00.000Z",
+                "updatedAt": "2023-01-05T00:00:00.000Z",
+                "createdBy": 2,
+                "updatedBy": 2,
+                "isActive": true
+            }
+        ]
     }
     ]
+
 
     const artists = [
         {
@@ -92,6 +117,7 @@ function Page() {
             name: eventDetails[0]?.name || "",
             EventDate: eventDetails[0]?.eventDate?.split("T")[0] || "",
             EventTime: eventDetails[0]?.eventTime?.split("T")[1]?.slice(0, 5) || "",
+            eventPhoto: eventDetails[0]?.eventPhoto || "",
             location: eventDetails[0]?.location?.name || "",
             OpeningTime: eventDetails[0]?.doorOpeningTime?.split("T")[1]?.slice(0, 5) || "",
             price: eventDetails[0]?.baseTicketPrice || "",
@@ -100,17 +126,29 @@ function Page() {
             artistname: artists[0]?.name || "",
             biography: artists[0]?.biography || "",
             artistPhoto: null,
+            event: null,
             role: "Vocalist",
             newartistname: "",
             newbiography: "",
             newartistPhoto: "",
             newrole: "",
             organizer: eventDetails[0]?.organizer?.organizerName || "",
+            artists: eventDetails[0].artists.map(a => ({
+                name: a.name,
+                biography: a.biography,
+                role: "",
+                artistPhoto: a.photoUrl || null
+            }))
+
         }
     })
 
 
-    const [openModal, setOpenModal] = useState(false)
+    const { fields, append, remove } = useFieldArray({
+        control,
+        name: "artists"
+    });
+
 
     // Handle submit
     function onSubmit(data: any) {
@@ -137,7 +175,7 @@ function Page() {
                     <div className='grid col-span-2'>
                         <label className=' text-[16px] font-medium font-sans'>Upload Event Photo</label>
 
-                        <ImageUploaderController control={control} name="event" multiple={false} />
+                        <ImageUploaderController control={control} defaultValue={eventDetails[0]?.eventPhoto || ""} name="eventPhoto" multiple={false} />
                     </div>
 
 
@@ -224,47 +262,35 @@ function Page() {
 
                             <h1 className='text-[#4B91F1] text-[20px]'>Event Artist Details</h1>
 
-                            <button className='w-[71px] h-[42px] p-[10px] text-[#4B91F1] border rounded-[10px] border-[#4B91F1] cursor-pointer
-                            flex flex-col items-center justify-center
-                            ' type='button' onClick={() => { setOpenModal(!openModal) }}>+ Add</button>
+                            <button
+                                className="px-4 py-2 text-[#4B91F1] border rounded-[10px] border-[#4B91F1]"
+                                type="button"
+                                onClick={() =>
+                                    append({
+                                        name: "",
+                                        role: "",
+                                        biography: "",
+                                        artistPhoto: null,
+                                    })
+                                }
+                            >
+                                + Add
+                            </button>
                         </div>
 
                         <div className='grid grid-cols-2 gap-9'>
 
-                            <Input
-                                type="string"
-                                required={true}
-                                label='Artist Name'
-                                name='artistname'
-                                register={register}
-                                error={errors?.artistname?.message}
-                            />
-                            <Input
-                                type="string"
-                                required={true}
-                                label='Artist Role'
-                                name='role'
-                                register={register}
-                                error={errors?.role?.message}
-                            />
-
-                            <div className='col-span-2 space-y-6'>
-
-
-                                <Input
-                                    required={true}
-                                    label='Artist Biography'
-                                    name='biography'
+                            {fields.map((field, index) => (
+                                <EditArtistField
+                                    key={field.id}
                                     register={register}
-                                    multiline={true}
-
-                                    error={errors?.biography?.message}
+                                    errors={errors?.artists?.[index] || {}}
+                                    control={control}
+                                    prefix={`artists.${index}`}
+                                    defaultImageUrl={eventDetails[0].artists[index]?.photoUrl || ""}
+                                    onRemove={() => remove(index)}
                                 />
-
-                                <ImageUploaderController control={control} name="artistPhoto" multiple={false} />
-
-                            </div>
-
+                            ))}
 
                             <Input
                                 type="string"
@@ -283,56 +309,7 @@ function Page() {
                                 error={errors?.organizer?.message}
                             />
 
-                            {
-                                openModal &&
-
-                                <div className='col-span-2 space-y-6'>
-                                    <div className='flex justify-between'>
-
-                                        <h1 className=''>Event Artist Details</h1>
-
-                                    </div>
-                                    <div className='grid grid-cols-2 gap-9'>
-
-                                        <Input
-                                            type="string"
-                                            required={true}
-                                            label='Artist Name'
-                                            name='newartistname'
-                                            register={register}
-                                            error={errors?.artistname?.message}
-                                        />
-                                        <Input
-                                            type="string"
-                                            required={true}
-                                            label='Artist Role'
-                                            name='newrole'
-                                            register={register}
-                                            error={errors?.role?.message}
-                                        />
-
-                                        <div className='col-span-2 space-y-6'>
-
-
-                                            <Input
-                                                required={true}
-                                                label='Artist Biography'
-                                                name='newbiography'
-                                                register={register}
-                                                multiline={true}
-
-                                                error={errors?.biography?.message}
-                                            />
-
-                                            <ImageUploaderController control={control} name="newartistPhoto" multiple={false} />
-
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                            }
+                          
                         </div>
 
 

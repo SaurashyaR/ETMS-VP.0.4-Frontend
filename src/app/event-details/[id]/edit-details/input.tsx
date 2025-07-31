@@ -17,7 +17,6 @@ interface IProps {
 
 const Input: React.FC<IProps> = ({ required, label, name, error, register, multiline, placeholder, type ,value}) => {
 
-    console.log("input error ", error)
     return (
         <div className='flex flex-col gap-1 font-sans font-medium w-full '>
             <div className='flex font-sans '>
