@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { IoChevronBackOutline } from 'react-icons/io5'
 
@@ -31,15 +32,15 @@ function page() {
                     </div>
 
                     <div className='flex gap-2'>
-                        <div className='w-[37px] h-[37px] bg-[#4B91F1] text-white rounded-full flex justify-center items-center cursor-pointer'>
+                        <Link href={`/event-details/1`} className='w-[37px] h-[37px] bg-[#4B91F1] text-white rounded-full flex justify-center items-center cursor-pointer'>
 
                             <IoChevronBackOutline />
-                        </div>
+                        </Link>
 
-                        <button className='w-[94px] h-[41px] px-[10px] py-[11px] border-[#2460B9] border rounded-[5px]
+                        <Link href={`/event-details/:id/edit-details/`} className='w-[94px] h-[41px] px-[10px] py-[11px] border-[#2460B9] border rounded-[5px]
                      bg-white text-[#2460B9]
                      flex justify-center items-center
-                     cursor-pointer'>Edit</button>
+                     cursor-pointer'>Edit</Link>
 
                     </div>
 

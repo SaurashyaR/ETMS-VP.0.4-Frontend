@@ -1,5 +1,6 @@
 import EventArtitst from '@/components/features/shared/EventArtitst';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 import { BiSolidMedal } from 'react-icons/bi';
 import { CiCalendar, CiLocationOn } from 'react-icons/ci';
@@ -79,15 +80,15 @@ function page() {
                     </div>
 
                     <div className='flex gap-2'>
-                        <div className='w-[37px] h-[37px] bg-[#4B91F1] text-white rounded-full flex justify-center items-center cursor-pointer'>
+                        <Link href={`/event-details`} className='w-[37px] h-[37px] bg-[#4B91F1] text-white rounded-full flex justify-center items-center cursor-pointer'>
 
                             <IoChevronBackOutline />
-                        </div>
+                        </Link>
 
-                        <button className='w-[94px] h-[41px] px-[10px] py-[11px] border-[#2460B9] border rounded-[5px]
+                        <Link href={`:id/edit-details`} className='w-[94px] h-[41px] px-[10px] py-[11px] border-[#2460B9] border rounded-[5px]
                      bg-white text-[#2460B9]
                      flex justify-center items-center
-                     cursor-pointer'>Edit</button>
+                     cursor-pointer'>Edit</Link>
 
                     </div>
 
@@ -192,7 +193,7 @@ function page() {
                             </ul>
                         </div>
 
-                        <div>
+                        <Link href={`/artist-details/:id`}>
                             <h1 className='text-[32px] font-[400]'>Event Artist</h1>
                             <div className='mt-2'>
 
@@ -203,7 +204,7 @@ function page() {
                                     image="/1.png"
                                 />
                             </div>
-                        </div>
+                        </Link>
                     </div>
 
                 </div>

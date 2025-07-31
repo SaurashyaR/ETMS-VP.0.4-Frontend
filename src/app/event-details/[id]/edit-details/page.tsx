@@ -5,6 +5,7 @@ import { useFieldArray, useForm } from 'react-hook-form'
 import Input from './input'
 import ImageUploaderController from './file-upload'
 import EditArtistField from './editArtistField'
+import Link from 'next/link'
 
 function Page() {
     const eventDetails = [{
@@ -318,8 +319,8 @@ function Page() {
                     <div className='flex gap-x-[10px]'>
                         <button className='w-[71px] h-[42px] p-[10px] text-white bg-[#1EBBD7] border rounded-[5px] cursor-pointer
                             flex flex-col justify-center items-center' >Submit</button>
-                        <button className='w-[71px] h-[42px] p-[10px] text-white bg-[#F53F3F] border rounded-[5px] cursor-pointer
-                            flex flex-col justify-center items-center' type='button'>Cancel</button>
+                        <Link href={`/event-details/:id`} className='w-[71px] h-[42px] p-[10px] text-white bg-[#F53F3F] border rounded-[5px] cursor-pointer
+                            flex flex-col justify-center items-center' type='button'>Cancel</Link>
                     </div>
                 </form>
             </main>
