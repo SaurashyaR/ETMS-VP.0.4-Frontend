@@ -9,14 +9,9 @@ import TicketHeader from "@/components/features/booking/TicketHeader";
 const page = () => {
   return (
     <>
-      <main className="min-h-screen bg-gray-50 py-10 px-4">
+      <main className="min-h-screen bg-gray-50 py-10 px-4 ms-90">
        
-   <TicketHeader
-  title="My Tickets"
-  subtitle="Book now and enjoy exclusive offers!"
-  buttonText="Create Event"
-  onButtonClick={() => console.log('Button clicked')}
-/>
+       <TicketHeader/>
 
         
         <SearchFilterBar />

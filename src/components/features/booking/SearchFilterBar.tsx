@@ -8,7 +8,7 @@ const SearchFilterBar: React.FC = () => {
                     lg:max-w-[1047px]
                     xl:max-w-[1478px]
                     mx-auto
-                    
+                    mt-5
                    ">
       {/* Search Bar */}
       <div className="relative w-full lg:w-[841px] xl:w-[1120px]">
@@ -26,9 +26,9 @@ const SearchFilterBar: React.FC = () => {
         type="button"
         className="flex items-center justify-center gap-2 h-[42px] w-full sm:w-auto
                    lg:w-[174px] xl:w-[250px] px-[52px] py-[10px]
-                   rounded-[10px] bg-blue-500 text-white hover:bg-blue-600 transition duration-200"
+                   rounded-[10px] bg-white text-black hover:bg-gray-200 transition duration-200 shadow"
       >
-        <FiFilter className="text-white text-lg" />
+        <FiFilter className="text-black text-lg" />
         <span>Filter</span>
       </button>
     </div>
