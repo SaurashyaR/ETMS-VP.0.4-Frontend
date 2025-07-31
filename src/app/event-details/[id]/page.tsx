@@ -51,7 +51,7 @@ function page() {
         }
     ];
 
-    const event = data[0]; // picking the first event for now
+    const event = data[0]; 
 
     const formatDate = (dateStr: string) =>
         new Date(dateStr).toLocaleDateString(undefined, {
