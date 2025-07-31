@@ -41,7 +41,7 @@ const bookings = [
 
 export default function RecentBookings() {
   return (
-    <div className="bg-white rounded-xl shadow-sm p-4 w-full max-w-3xl border">
+    <div className="bg-white rounded-xl shadow-sm p-4 w-full max-w-32xl">
       <div className="flex justify-between items-center mb-3">
         <div className="flex items-center gap-2">
           <div className="bg-[#F3F4F6] p-2 rounded-full">
