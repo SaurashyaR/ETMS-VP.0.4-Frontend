@@ -17,14 +17,18 @@ const page = () => {
    <div className="ml-4 mr-4 flex-1">
     <TicketHeader />
     <SearchFilterBar />
-    <BookingCard
-      imageUrl={bookingData.imageUrl}
-      startDate={bookingData.startDate}
-      endDate={bookingData.endDate}
-      title={bookingData.title}
-      location={bookingData.location}
-      price={bookingData.price}
-    />
+    {bookingData.map((booking, index) => (
+  <BookingCard
+    key={index}
+    imageUrl={booking.imageUrl}
+    startDate={booking.startDate}
+    endDate={booking.endDate}
+    title={booking.title}
+    location={booking.location}
+    price={booking.price}
+  />
+))}
+
   </div>
 </div>
 

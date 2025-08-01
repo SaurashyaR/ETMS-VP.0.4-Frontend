@@ -22,7 +22,7 @@ const BookingCard: React.FC<BookingCardProps> = ({
 }) => {
   return (
     // className="w-full  mx-auto p-8 bg-white border border-[#e0e0e0] rounded shadow-sm"
-    <div className="w-full max-w-[1280px]  mx-auto px-4 py-10">
+    <div className="w-full max-w-[1280px]  mx-auto px-4 py-4">
       <div
         className={`
           bg-white shadow-lg rounded-[10px]
@@ -62,12 +62,12 @@ const BookingCard: React.FC<BookingCardProps> = ({
           >
             <div className="flex items-center gap-2">
               <FaCalendarAlt />
-              <span>{startDate}</span>
+              <span className="text-black">{startDate}</span>
             </div>
             <div className="h-4 w-px bg-gray-300" />
             <div className="flex items-center gap-2">
               <FaCalendarAlt />
-              <span>{endDate}</span>
+              <span className="text-black">{endDate}</span>
             </div>
           </div>
 
