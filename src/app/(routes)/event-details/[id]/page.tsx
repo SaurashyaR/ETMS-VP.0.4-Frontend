@@ -1,4 +1,4 @@
-import EventArtitst from '@/components/features/shared/EventArtitst';
+import EventArtitst from '@/components/features/event-detail/EventArtitst';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'

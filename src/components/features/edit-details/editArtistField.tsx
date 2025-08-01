@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import ImageUploaderController from "./file-upload";
-import Input from "./input";
+import ImageUploaderController from "../shared/file-upload";
+import Input from "../shared/input";
 
 interface EditArtistFieldProps {
     register: any;

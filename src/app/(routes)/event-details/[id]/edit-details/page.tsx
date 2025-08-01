@@ -5,7 +5,7 @@ import { useFieldArray, useForm } from 'react-hook-form'
 import Link from 'next/link'
 import ImageUploaderController from '@/components/features/shared/file-upload'
 import Input from '@/components/features/shared/input'
-import EditArtistField from '@/components/features/shared/editArtistField'
+import EditArtistField from '@/components/features/edit-details/editArtistField'
 
 function Page() {
     const eventDetails = [{
