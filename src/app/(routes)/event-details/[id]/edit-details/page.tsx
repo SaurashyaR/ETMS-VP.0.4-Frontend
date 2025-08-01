@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
-import Input from './input'
-import ImageUploaderController from './file-upload'
-import EditArtistField from './editArtistField'
 import Link from 'next/link'
+import ImageUploaderController from '@/components/features/shared/file-upload'
+import Input from '@/components/features/shared/input'
+import EditArtistField from '@/components/features/shared/editArtistField'
 
 function Page() {
     const eventDetails = [{
@@ -310,7 +310,7 @@ function Page() {
                                 error={errors?.organizer?.message}
                             />
 
-                          
+
                         </div>
 
 

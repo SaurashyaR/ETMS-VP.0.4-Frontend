@@ -39,23 +39,23 @@ export default function EditArtistField({
             {/* Artist Inputs */}
             <div className="grid grid-cols-2 gap-16">
 
-            <Input
-                type="string"
-                required={true}
-                label="Artist Name"
-                name={`${prefix}.name`}
-                register={register}
-                error={errors?.name?.message}
-            />
+                <Input
+                    type="string"
+                    required={true}
+                    label="Artist Name"
+                    name={`${prefix}.name`}
+                    register={register}
+                    error={errors?.name?.message}
+                />
 
-            <Input
-                type="string"
-                required={true}
-                label="Artist Role"
-                name={`${prefix}.role`}
-                register={register}
-                error={errors?.role?.message}
-            />
+                <Input
+                    type="string"
+                    required={true}
+                    label="Artist Role"
+                    name={`${prefix}.role`}
+                    register={register}
+                    error={errors?.role?.message}
+                />
             </div>
 
             <Input
