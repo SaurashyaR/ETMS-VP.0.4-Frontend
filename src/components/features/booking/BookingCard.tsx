@@ -21,7 +21,8 @@ const BookingCard: React.FC<BookingCardProps> = ({
   price,
 }) => {
   return (
-    <div className="w-full px-4 py-10">
+    // className="w-full  mx-auto p-8 bg-white border border-[#e0e0e0] rounded shadow-sm"
+    <div className="w-full max-w-[1280px]  mx-auto px-4 py-10">
       <div
         className={`
           bg-white shadow-lg rounded-[10px]

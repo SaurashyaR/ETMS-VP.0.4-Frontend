@@ -11,15 +11,15 @@ const TicketHeader: React.FC = () => {
   };
 
   return (
-    <section className="w-full flex justify-center pt-10">
+    <section className="w-full flex justify-left pt-10 ms-4">
       <div
         className="
-          w-[90%]
+          w-[100%]
           sm:max-w-[640px]
           md:max-w-[900px]
           lg:max-w-[1047px]
-          xl:max-w-[1280px]
-          2xl:max-w-[1480px]
+          xl:max-w-[1180px]
+          2xl:max-w-[1180px]
         "
       >
         {/* Title + Button */}

@@ -5,25 +5,29 @@ import { bookingData } from "@/types/bookingData";
 import EventForm from "@/components/features/booking/EventForm";
 import SearchFilterBar from "@/components/features/booking/SearchFilterBar";
 import TicketHeader from "@/components/features/booking/TicketHeader";
+import Sidebar from "@/components/features/shared/SideBar";
 
 const page = () => {
   return (
     <>
-      <main className="min-h-screen bg-gray-50 py-10 px-4 ms-90">
-       
-       <TicketHeader/>
+     <div className="flex">
+    <Sidebar />
+  
 
-        
-        <SearchFilterBar />
-        <BookingCard
-          imageUrl={bookingData.imageUrl}
-          startDate={bookingData.startDate}
-          endDate={bookingData.endDate}
-          title={bookingData.title}
-          location={bookingData.location}
-          price={bookingData.price}
-        />
-      </main>
+   <div className="ml-4 mr-4 flex-1">
+    <TicketHeader />
+    <SearchFilterBar />
+    <BookingCard
+      imageUrl={bookingData.imageUrl}
+      startDate={bookingData.startDate}
+      endDate={bookingData.endDate}
+      title={bookingData.title}
+      location={bookingData.location}
+      price={bookingData.price}
+    />
+  </div>
+</div>
+
     </>
   );
 };
