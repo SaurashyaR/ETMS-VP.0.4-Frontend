@@ -107,11 +107,12 @@ export default function UpcomingEventsPage() {
       </div>
 
       <div className="flex flex-col gap-4">
-        {events.map((event) => (
-          <div
+        {events?.map((event) => {
+          return (
+            <div
             key={event.id}
             className="relative border rounded-lg p-3 pr-4 flex items-start space-x-4 hover:shadow-md transition"
-          >
+            >
             <a
               href="#"
               className="absolute top-2 right-3 text-[13px] text-blue-600 font-medium inline-flex items-center hover:underline"
@@ -142,7 +143,8 @@ export default function UpcomingEventsPage() {
               </p>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   );

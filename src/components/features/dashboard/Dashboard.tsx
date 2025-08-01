@@ -11,9 +11,9 @@ const Dashboard = () => {
       <Sidebar />
 
       <div className="flex-1 p-6">
-        <div className="mb-4">
+        <div className="mb-6">
           <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1>
-          <hr className="mt-3 border-t border-gray-300" />
+          <hr className="mt-6 border-t border-gray-300" />
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
