@@ -7,21 +7,23 @@ import TopSellingEvents from "./TopSellingEvents";
 
 const Dashboard = () => {
   return (
-    <div className="flex bg-[#f4f4f4] min-h-screen w-full">
+    <div className="min-h-screen w-full bg-[#f4f4f4]">
+      {/* Fixed Sidebar */}
       <Sidebar />
 
-      <div className="flex-1 p-6">
+      {/* Content Wrapper with padding to offset the sidebar */}
+      <div className="pl-[260px] p-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1>
+          <h1 className="ml-6 text-2xl font-semibold text-gray-800">Dashboard</h1>
           <hr className="mt-6 border-t border-gray-300" />
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6 ml-6">
           <UpcomingEventsPage />
           <RecentBookings />
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 ml-6">
           <RevenueInsights />
           <TopSellingEvents />
         </div>
