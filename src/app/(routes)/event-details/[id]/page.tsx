@@ -52,7 +52,7 @@ function page() {
         }
     ];
 
-    const event = data[0]; 
+    const event = data[0];
 
     const formatDate = (dateStr: string) =>
         new Date(dateStr).toLocaleDateString(undefined, {
@@ -95,9 +95,12 @@ function page() {
                 </div>
 
                 {/* Top Blue Header Full Width */}
-                <div className="w-[full] h-[273px] bg-[#2B5793] text-white flex ">
-                    <div className="w-full mx-auto flex  flex-col xl:flex justify-end items-end pr-6">
-                        <div className=' xl:mr-[50%] xl:mt-19  '>
+                {/* Top Blue Header Full Width */}
+                <div className="w-full h-[273px] bg-[#2B5793] text-white flex justify-end items-end">
+                    <div className="w-[68%]  flex flex-col md:flex-col xl:flex-row justify-between items-end pr-6 gap-4">
+
+                        {/* Event Details */}
+                        <div className="pb-2">
                             <h1 className="text-[24px]">{event.name}</h1>
                             <div className="flex flex-col text-[16px] gap-[12px]">
                                 <span className="flex gap-[9px] items-center">
@@ -111,15 +114,22 @@ function page() {
                                 </span>
                             </div>
                         </div>
-                        <div className="w-[205px] xl:w-[266px] h-[54px] bg-white flex rounded-[10px] justify-around items-center
-                        xl:mr-6 mb-2">
-                            <span className="text-black font-[400]">Rs {event.baseTicketPrice}</span>
-                            <button className="w-[117px] h-[38px] bg-[#4B91F1] text-white rounded-[5px] cursor-pointer flex items-center justify-center">
-                                <span className="text-[16px]">Book Now</span>
-                            </button>
+
+                        {/* Price & Book Now */}
+                        <div className="flex justify-end items-end self-end">
+                            <div className="w-[205px] xl:w-[266px] h-[54px] bg-white flex rounded-[10px] justify-around items-center mb-2">
+                                <span className="text-black font-[400]">Rs {event.baseTicketPrice}</span>
+                                <button className="w-[117px] h-[38px] bg-[#4B91F1] text-white rounded-[5px] cursor-pointer flex items-center justify-center">
+                                    <span className="text-[16px]">Book Now</span>
+                                </button>
+                            </div>
                         </div>
+
                     </div>
                 </div>
+
+
+
 
                 {/* Content Wrapper */}
                 <div className="relative max-w-[1200px] mx-6 flex gap-6 mt-[50px]">
@@ -199,7 +209,7 @@ function page() {
 
                                 <EventArtitst
                                     id={1}
-                                    name="Ashim"
+                                    name="Nepathya"
                                     role="Singer"
                                     image="/1.png"
                                 />
@@ -238,7 +248,7 @@ function page() {
                         </div>
 
 
-                        <div className='flex justify-around '>
+                        <div className='flex justify-around space-x-2 '>
 
                             <div className='flex flex-col gap-[50px]'>
 
@@ -247,7 +257,7 @@ function page() {
                                     <h1 className='text-[24px]'>Gold Sponsor</h1>
                                 </div>
 
-                                <div className='flex gap-[90px]'>
+                                <div className='flex gap-[60px]'>
                                     <div className="w-[145px] h-[141px] relative rounded-full overflow-hidden">
                                         <Image
                                             src={'/1.png'}
@@ -275,7 +285,7 @@ function page() {
                                     <h1 className='text-[24px]'>Silver Sponsor</h1>
                                 </div>
 
-                                <div className='flex gap-[90px]'>
+                                <div className='flex gap-[60px]'>
                                     <div className="w-[145px] h-[141px] relative rounded-full overflow-hidden">
                                         <Image
                                             src={'/1.png'}

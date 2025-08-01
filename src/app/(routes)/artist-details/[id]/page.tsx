@@ -37,14 +37,17 @@ function page() {
                             <IoChevronBackOutline />
                         </Link>
 
-                        <Link href={`/event-details/:id/edit-details/`} className='w-[94px] h-[41px] px-[10px] py-[11px] border-[#2460B9] border rounded-[5px]
-                     bg-white text-[#2460B9]
+                        <Link href={`/event-details/:id/edit-details/`} className='w-[94px] h-[41px] px-[10px] py-[11px] border-[#2B5793] border rounded-[5px]
+                     bg-white text-[#2B5793]
                      flex justify-center items-center
                      cursor-pointer'>Edit</Link>
 
                     </div>
 
                 </div>
+
+                <hr className='mx-6 py-6 mt-6 text-[#0000004D]' />
+
 
                 <div className="w-[full] h-[273px] bg-[#2B5793] text-white flex ">
                     <div className="w-full mx-auto flex  flex-col xl:flex justify-end items-end pr-6">

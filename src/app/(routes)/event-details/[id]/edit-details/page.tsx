@@ -166,13 +166,14 @@ function Page() {
                     </div>
                 </div>
 
+                <hr className='mx-6 py-2 mt-6 text-[#0000004D]' />
+
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                     className=' shadow-lg border border-none rounded-[10px] p-9 space-y-4 mx-6 bg-white
-                    grid grid-cols-2 gap-16
-                    '
+                    grid grid-cols-2 gap-3'
                 >
-                    <h1 className='text-[#4B91F1] font-[400] text-[20px] col-span-2 border-b-2 border-[#0000004D] pb-6'>Event Details</h1>
+                    <h1 className='text-[#4B91F1] font-[400] text-[20px] col-span-2 border-b-2 border-[#0000004D] pb-4'>Event Details</h1>
                     <div className='grid col-span-2'>
                         <label className=' text-[16px] font-medium font-sans'>Upload Event Photo</label>
 

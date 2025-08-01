@@ -6,14 +6,14 @@ import Sidebar from '@/components/features/shared/SideBar'
 const page = () => {
   return (
     <>
-   <div className="flex">
-  <Sidebar />
-  <div className="ml-4 mr-4 flex-1">
-    <HeaderSection />
-    <EventForm />
-  </div>
-</div>
-</>
+      <div className="flex">
+        <Sidebar />
+        <div className="ml-4 mr-4 flex-1">
+          <HeaderSection />
+          <EventForm />
+        </div>
+      </div>
+    </>
   )
 }
 

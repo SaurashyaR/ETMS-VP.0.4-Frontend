@@ -18,7 +18,7 @@ interface IProps {
 const Input: React.FC<IProps> = ({ required, label, name, error, register, multiline, placeholder, type ,value}) => {
 
     return (
-        <div className='flex flex-col gap-1 font-sans font-medium w-full '>
+        <div className='flex flex-col gap-[6px] font-sans font-medium w-full '>
             <div className='flex font-sans '>
                 <label htmlFor={name} className=' text-[16px]  font-sans'>{label}</label>
             </div>

@@ -29,7 +29,7 @@ export default function EditArtistField({
                     <button
                         type="button"
                         onClick={onRemove}
-                        className="text-red-500 font-bold text-lg hover:text-red-700"
+                        className="text-red-500 font-bold text-lg hover:text-red-700 cursor-pointer "
                     >
                         ✕
                     </button>
