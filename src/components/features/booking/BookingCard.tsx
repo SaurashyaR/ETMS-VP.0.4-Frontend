@@ -87,7 +87,7 @@ const BookingCard: React.FC<BookingCardProps> = ({
   <button className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
     View Detail
   </button>
-  <span className="text-2xl font-bold text-gray-800 whitespace-nowrap">
+  <span className="text-l font-bold text-gray-800 whitespace-nowrap">
     Rs {price}
   </span>
 </div>

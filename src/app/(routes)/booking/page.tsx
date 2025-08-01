@@ -10,27 +10,26 @@ import Sidebar from "@/components/features/shared/SideBar";
 const page = () => {
   return (
     <>
-     <div className="flex">
-    <Sidebar />
-  
+  <div className="flex">
+  <Sidebar />
 
-   <div className="ml-4 mr-4 flex-1">
+  <div className="flex-1 ml-[260px] px-4">
     <TicketHeader />
     <SearchFilterBar />
     {bookingData.map((booking, index) => (
-  <BookingCard
-    key={index}
-    imageUrl={booking.imageUrl}
-    startDate={booking.startDate}
-    endDate={booking.endDate}
-    title={booking.title}
-    location={booking.location}
-    price={booking.price}
-  />
-))}
-
+      <BookingCard
+        key={index}
+        imageUrl={booking.imageUrl}
+        startDate={booking.startDate}
+        endDate={booking.endDate}
+        title={booking.title}
+        location={booking.location}
+        price={booking.price}
+      />
+    ))}
   </div>
 </div>
+
 
     </>
   );
