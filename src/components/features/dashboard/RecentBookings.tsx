@@ -51,12 +51,19 @@ export default function RecentBookings() {
             Recent Bookings
           </h2>
         </div>
-        <a
-          href="#"
-          className="text-[13px] text-blue-600 font-medium hover:underline flex items-center gap-[2px]"
-        >
-          View All
-        </a>
+          <a
+      href="#"
+      className="text-[13px] text-blue-600 font-medium hover:underline flex items-center gap-[2px]"
+    >
+      View All
+      <span>
+        <img
+          src="/assets/Vector.svg"
+          alt="Arrow Icon"
+          className="w-4 h-2 [fill:theme('#4B91F1')]"
+        />
+      </span>
+    </a>
       </div>
 
       <div className="grid grid-cols-3 text-sm font-medium text-gray-600 border-b pb-2">

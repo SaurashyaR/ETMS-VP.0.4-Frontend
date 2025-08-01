@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function Sidebar() {
   return (
-    <div className="h-screen w-[260px] bg-white shadow-2xl flex flex-col justify-between">
+    <div className="fixed top-0 left-0 h-screen w-[260px] bg-white shadow-2xl flex flex-col justify-between z-50">
       <div>
         <div className="text-center py-4">
           <h1 className="text-[20px] font-bold tracking-wide">
@@ -24,17 +24,21 @@ export default function Sidebar() {
         </div>
 
         <div className="mt-2 px-1 flex flex-col gap-4">
-          <Link href='/'><SidebarItem
-            active
-            icon={<LayoutGrid size={18} />}
-            label="Dashboard"
-            labelClassName="text-[15px] font-semibold text-[#0b0b0b]"
-          /></Link>
-          <Link href="/event"><SidebarItem
-            icon={<Calendar size={18} />}
-            label="Events"
-            labelClassName="text-[15px] font-semibold text-[#0b0b0b]"
-          /></Link>
+          <Link href='/'>
+            <SidebarItem
+              active
+              icon={<LayoutGrid size={18} />}
+              label="Dashboard"
+              labelClassName="text-[15px] font-semibold text-[#0b0b0b]"
+            />
+          </Link>
+          <Link href="/event">
+            <SidebarItem
+              icon={<Calendar size={18} />}
+              label="Events"
+              labelClassName="text-[15px] font-semibold text-[#0b0b0b]"
+            />
+          </Link>
           <SidebarItem
             icon={<Ticket size={18} />}
             label="Reservations & Ticketing"
