@@ -30,7 +30,6 @@ const topSellingEvents = [
 
 export default function TopSellingEvents() {
   return (
-    <main className="min-h-screen bg-[#f9f9f9] p-8 flex justify-center items-start">
       <div className="bg-white rounded-xl p-4 shadow-md w-full max-w-2xl">
         <div className="flex items-center space-x-2 mb-4">
           <span className="bg-[#efefef] p-2 rounded-full">
@@ -85,6 +84,5 @@ export default function TopSellingEvents() {
           </div>
         </div>
       </div>
-    </main>
   );
 }
