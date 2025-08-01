@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/ButtonVariant";
 
 const data = [
   { month: "Jan", revenue: 64.51, tickets: 35.55, customer: 85.72 },
