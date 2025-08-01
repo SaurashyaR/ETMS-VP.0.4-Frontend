@@ -26,7 +26,7 @@ const TicketHeader: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           <div>
             {/* Title */}
-            <h1 className="font-[Baumans] text-[24px] sm:text-[28px] md:text-[32px] xl:text-[36px] 2xl:text-[40px] leading-none tracking-normal font-normal text-black text-left">
+            <h1 className="font-baumans text-[24px] sm:text-[28px] md:text-[32px] xl:text-[36px] 2xl:text-[40px] leading-none tracking-normal font-normal text-black text-left">
               Ticket Booking
             </h1>
 

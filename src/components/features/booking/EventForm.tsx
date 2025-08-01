@@ -98,7 +98,7 @@ export default function EventForm() {
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-[#2196f3] text-sm font-semibold">Event Artist Details</h2>
-          <Button type="button" variant="outline" size="sm" onClick={addArtist}>
+          <Button type="button" variant="outline" size="sm"  className='text-[#2196f3]'onClick={addArtist}>
             <Plus className="w-4 h-4 mr-1" /> Add
           </Button>
         </div>
