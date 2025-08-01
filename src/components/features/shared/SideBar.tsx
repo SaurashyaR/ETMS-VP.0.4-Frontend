@@ -8,6 +8,7 @@ import {
   LogOut,
 } from "lucide-react";
 import SidebarItem from "./SidebarItem";
+import Link from "next/link";
 
 export default function Sidebar() {
   return (
@@ -23,17 +24,17 @@ export default function Sidebar() {
         </div>
 
         <div className="mt-2 px-1 flex flex-col gap-4">
-          <SidebarItem
+          <Link href='/'><SidebarItem
             active
             icon={<LayoutGrid size={18} />}
             label="Dashboard"
             labelClassName="text-[15px] font-semibold text-[#0b0b0b]"
-          />
-          <SidebarItem
+          /></Link>
+          <Link href="/event"><SidebarItem
             icon={<Calendar size={18} />}
             label="Events"
             labelClassName="text-[15px] font-semibold text-[#0b0b0b]"
-          />
+          /></Link>
           <SidebarItem
             icon={<Ticket size={18} />}
             label="Reservations & Ticketing"

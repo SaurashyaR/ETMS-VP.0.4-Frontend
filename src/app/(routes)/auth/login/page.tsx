@@ -30,7 +30,6 @@ const LoginPage: React.FC = () => {
           <label className="text-sm">Admin ID/ Email</label>
           <input
             type="text"
-            defaultValue="ORG123456"
             className="border rounded-lg px-3 py-2 mb-4 w-full focus:outline-none focus:ring-1 focus:ring-blue-400"
           />
 
@@ -38,7 +37,6 @@ const LoginPage: React.FC = () => {
           <div className="relative mb-4">
             <input
               type={showPassword ? "text" : "password"}
-              defaultValue="123456"
               className="border rounded-lg px-3 py-2 w-full focus:outline-none focus:ring-1 focus:ring-blue-400 pr-10"
             />
             <button
